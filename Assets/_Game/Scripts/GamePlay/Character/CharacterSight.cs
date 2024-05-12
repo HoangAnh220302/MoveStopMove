@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class CharacterSight : MonoBehaviour
 {
-    [SerializeField] Character character;
-
-    private void OnTriggerEnter(Collider other)
+    // Start is called before the first frame update
+    void Start()
     {
-        if (other.CompareTag(Constant.TAG_CHARACTER))
-        {
-            Character target = Cache.GetCharacter(other);
-            if (!target.IsDead)
-            {
-                character.AddTarget(target);
-            }
-        }
+        
     }
 
-    private void OnTriggerExit(Collider other)
+    // Update is called once per frame
+    void Update()
     {
-        if (other.CompareTag(Constant.TAG_CHARACTER))
-        {
-            Character target = Cache.GetCharacter(other);
-            character.RemoveTarget(target);
-        }
+        
     }
 }

@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolState : IState<Bot>
+public class PatrolState : MonoBehaviour
 {
-    public void OnEnter(Bot t)
+    // Start is called before the first frame update
+    void Start()
     {
-        t.SetDestination(LevelManager.Ins.RandomPoint());
+        
     }
 
-    public void OnExecute(Bot t)
+    // Update is called once per frame
+    void Update()
     {
-        if (t.IsDestination)
-        {
-            t.ChangeState(new IdleState());
-        }
+        
     }
-
-    public void OnExit(Bot t)
-    {
-
-    }
-
 }

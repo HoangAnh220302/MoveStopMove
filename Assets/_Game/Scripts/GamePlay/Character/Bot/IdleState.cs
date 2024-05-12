@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : IState<Bot>
+public class IdleState : MonoBehaviour
 {
-    public void OnEnter(Bot t)
+    // Start is called before the first frame update
+    void Start()
     {
-        t.OnMoveStop();
-        t.Counter.Start(() => t.ChangeState(new PatrolState()), Random.Range(0f, 2f));
+        
     }
 
-    public void OnExecute(Bot t)
+    // Update is called once per frame
+    void Update()
     {
-        t.Counter.Execute();
+        
     }
-
-    public void OnExit(Bot t)
-    {
-
-    }
-
 }
